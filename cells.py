@@ -10,6 +10,12 @@ class Cell():
     def get_position(self):
         return self.x, self.y
 
+    def __eq__(self, other):
+        if self.x == other.x and self.y == other.y:
+            return True
+        else:
+            False
+
 
 # Класс клетки типа А
 class CellA(Cell):

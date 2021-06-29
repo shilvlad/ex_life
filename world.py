@@ -16,7 +16,8 @@ class World():
         return self.population
 
     def clean_world(self):
-        pass
+
+
 
 
     def debug_print_world(self):
