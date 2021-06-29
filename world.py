@@ -2,11 +2,16 @@ import config
 import cells
 
 class World():
-    population = []
 
     def __init__(self):
+        self.population = []
         for i in range(config.WORLD_POPULATION_CELLS_A):
             self.population.append(cells.CellA())
+
+    def add_cellA(self, x, y):
+        tmpCell = cells.CellA(x=x, y=y)
+        self.population.append(tmpCell)
+        return tmpCell
 
 
     def get_world_size(self):
@@ -16,6 +21,17 @@ class World():
         return self.population
 
     def clean_world(self):
+        uniqueList = []
+        for item in self.population:
+            itemExist = False
+            for x in uniqueList:
+                if x == item:
+                    itemExist = True
+                    break
+            if not itemExist:
+                uniqueList.append(item)
+        print(uniqueList)
+
 
 
 
