@@ -20,6 +20,7 @@ class World():
     def get_all_cellsA(self):
         return self.population
 
+    # Удаляет совпадающие клетки
     def clean_world(self):
         uniqueList = []
         for item in self.population:
@@ -30,9 +31,9 @@ class World():
                     break
             if not itemExist:
                 uniqueList.append(item)
-        print(uniqueList)
-
-
+        delta_population = len(self.population) - len(uniqueList)
+        self.population = uniqueList
+        return delta_population
 
 
 

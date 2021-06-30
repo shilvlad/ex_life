@@ -19,7 +19,15 @@ class TestWorld(unittest.TestCase):
         self.assertEqual(self.w.get_all_cellsA().__len__(), config.WORLD_POPULATION_CELLS_A)
 
     def test_clean_world(self):
-        pass
+        self.s = world.World()
+        self.s.population.clear()
+        self.s.add_cellA(2, 2)
+        self.s.add_cellA(2, 2)
+        self.s.add_cellA(2, 3)
+        self.s.add_cellA(3, 2)
+        self.s.clean_world()
+        self.assertEqual(self.s.get_world_size(), 3)
+
 
 if __name__ == '__main__':
     unittest.main()
